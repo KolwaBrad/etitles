@@ -1,0 +1,151 @@
+body {
+    font-family: Inter, sans-serif;
+    text-align: center;
+    background-image: url(images/img4.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    
+  }
+  
+  p {
+    color: white;
+  }
+  
+  .endparagraph {
+    position: fixed;
+    bottom: 0;
+  }
+  .topnav {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+  
+  }
+  .topnav:hover {
+    color: rgb(0, 0, 0);
+  }
+
+  .blankdiv {
+    height: 30px;
+    width: 100%;
+  }
+
+  .maintitle {
+    margin-left: 0;
+  }
+
+  .centernav {
+    display: flex;
+  }
+
+  .mycenternav:hover {
+    color: rgba(0, 169, 0);
+  }
+
+  .mycenternav {
+    color: white;
+  }
+
+  .mylastnav:hover {
+    color: rgba(0, 169, 0);
+  }
+
+  .mylastnav {
+    color: white;
+  }
+
+  .centernav div {
+    padding: 10px;
+    
+  }
+
+  .centernav div:hover {
+    color: rgba(0, 169, 0);
+  }
+
+  .topnav .maintitle {
+    padding: 10px;
+    color: rgba(0, 169, 0);
+  }
+
+  .lastnav div {
+    padding: 10px;
+
+  }
+
+
+  .lastnav {
+    margin-right: 0;
+    display: flex;
+  }
+
+  .centernav div:hover {
+    background-color: #ffffff;
+  }
+  
+  .lastnav div:hover {
+    background-color: #ffffff;   
+  }
+
+  div a:hover {
+    color: rgba(0, 169, 0);
+  }
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+
+  header {
+
+    width: 100%;
+  }
+  
+  .searchbar input {
+    border: none;
+    font-size: 17px;
+    color: #333;
+    width: 300px;
+    height: 33px;
+    border-radius: 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+
+  .mytiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mytiles div {
+    height: 250px;
+    width: 250px;
+    margin: 12px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+  }
+
+  .mytiles div:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .mytileone {
+    background-image: url(images/img7.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .mytiletwo {
+    background-image: url(images/img8.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .mytilethree {
+    background-image: url(images/img9.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  
