@@ -2,10 +2,11 @@
 <html>
     <head>
         <title>Password Changed</title>
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
         <link rel="stylesheet" href="{{ asset('css/signup.css') }}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
     </head>
 
     <body>
