@@ -98,5 +98,13 @@ Route::get('/rejincomingrequests', [TransactionController::class, 'rejincomingre
 Route::get('/rejoutgoingrequests', [TransactionController::class, 'rejoutgoingrequests']);
 Route::post('/respondrequest', [TransactionController::class, 'respondrequest'])->name('respondrequest');
 Route::post('/completerequest', [TransactionController::class, 'completerequest'])->name('completerequest');
+Route::post('/addpayments', [TransactionController::class, 'addpayments'])->name('addpayments');
+Route::get('/finalisepurchase', [TransactionController::class, 'finalisepurchase']);
+Route::get('/rejectedtransfers', [TransactionController::class, 'rejectedtransfers']);
 
 Route::get('/pendingrequests',[EtitlesController::class,'pendingrequests']);
+Route::get('/proccedadmin',[EtitlesController::class,'proccedadmin']);
+
+Route::post('/transferapproverequest', [Blockchain::class, 'transferapproverequest'])->name('transferapproverequest');
+
+Route::post('/adminapproverequest', [TransactionController::class, 'adminapproverequest'])->name('adminapproverequest');

@@ -1,0 +1,204 @@
+body {
+    font-family: 'Poppins';
+    text-align: center;
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    
+  }
+  
+  p {
+    color: white;
+  }
+
+    header {
+     position: sticky;
+     top: 0;
+     background-color: #000;  
+     border-bottom-left-radius: 30px;
+     border-bottom-right-radius: 30px;
+}
+  
+  .endparagraph {
+    position: fixed;
+    bottom: 0;
+  }
+  .topnav {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+  
+  }
+  .topnav:hover {
+    color: rgb(0, 0, 0);
+  }
+
+  .blankdiv {
+    height: 30px;
+    width: 100%;
+  }
+
+  .maintitle {
+    margin-left: 0;
+  }
+
+  .centernav {
+    display: flex;
+  }
+
+  .mycenternav:hover {
+    color: rgb(0, 0, 0);
+  }
+
+  .mycenternav {
+    color: white;
+  }
+
+  .mylastnav:hover {
+    color: rgb(0, 0, 0);
+  }
+
+  .mylastnav {
+    color: white;
+  }
+
+  .centernav div {
+    padding: 10px;
+    
+  }
+
+  .centernav div:hover {
+    color: rgb(0, 0, 0);
+  }
+
+  .topnav .maintitle {
+    padding: 10px;
+    color: rgba(0, 169, 0);
+  }
+
+  .lastnav div {
+    padding: 10px;
+
+  }
+
+
+  .lastnav {
+    margin-right: 0;
+    display: flex;
+  }
+
+  .centernav div:hover {
+    background-color: #ffffff;
+  }
+  
+  .lastnav div:hover {
+    background-color: #ffffff;   
+  }
+
+  div a:hover {
+    color: rgb(0, 0, 0);
+  }
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+
+  header {
+
+    width: 100%;
+  }
+  
+  .searchbar input {
+    border: none;
+    font-size: 17px;
+    color: #333;
+    width: 300px;
+    height: 33px;
+    border-radius: 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+
+ 
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Poppins';
+    border-radius: 10px;
+  }
+  
+  .price {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+  }
+
+  .approxarea {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+  }
+
+  .chatowner {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+  }
+
+  .reqpurchase {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 1px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 12px;
+    border-radius: 2px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+  .county_lands {
+    display: flex;
+    justify-content: center;
+  }
+
+  .county_lands h1 {
+    font-size: 16px;
+  }
+  .all_county_lands {
+    background-color: #ffffffe1;
+    border-radius: 30px;
+  }
+
+  .card p {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+  }
+
+  .card button {
+    font-size: 14px;
+  }
+
+  div h1 {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  #land_sales_title {
+    background-color: #ffffffe1;
+    color: #000000;
+  }

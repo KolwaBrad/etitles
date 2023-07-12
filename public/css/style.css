@@ -1,7 +1,7 @@
 body {
-    font-family: Inter, sans-serif;
+    font-family: 'Poppins';
     text-align: center;
-    background-image: url(images/img4.jpg);
+    background-image: url(images/bac4.jpg);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
@@ -9,7 +9,7 @@ body {
   }
   
   p {
-    color: white;
+    color: rgb(0, 0, 0);
   }
   
   .endparagraph {
@@ -19,12 +19,12 @@ body {
   .topnav {
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     
   
   }
   .topnav:hover {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
   }
 
   .blankdiv {
@@ -41,19 +41,19 @@ body {
   }
 
   .mycenternav:hover {
-    color: rgba(0, 169, 0);
+    color: rgb(255, 255, 255);
   }
 
   .mycenternav {
-    color: white;
+    color: rgb(0, 0, 0);
   }
 
   .mylastnav:hover {
-    color: rgba(0, 169, 0);
+    color: rgb(255, 255, 255);
   }
 
   .mylastnav {
-    color: white;
+    color: rgb(0, 0, 0);
   }
 
   .centernav div {
@@ -62,7 +62,7 @@ body {
   }
 
   .centernav div:hover {
-    color: rgba(0, 169, 0);
+    color: rgb(255, 255, 255);
   }
 
   .topnav .maintitle {
@@ -82,20 +82,20 @@ body {
   }
 
   .centernav div:hover {
-    background-color: #ffffff;
+    background-color: #000000;
   }
   
   .lastnav div:hover {
-    background-color: #ffffff;   
+    background-color: #000000;   
   }
 
   div a:hover {
-    color: rgba(0, 169, 0);
+    color: rgb(255, 255, 255);
   }
 
   a {
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
   }
 
 
@@ -107,11 +107,11 @@ body {
   .searchbar input {
     border: none;
     font-size: 17px;
-    color: #333;
+    color: #c7c7c7;
     width: 300px;
     height: 33px;
     border-radius: 20px;
-    background-color: #fff;
+    background-color: #000000;
     text-align: center;
   }
 
@@ -133,19 +133,85 @@ body {
   }
 
   .mytileone {
-    background-image: url(images/img7.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 50px;
   }
-  .mytiletwo {
-    background-image: url(images/img8.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+
+  .mytileone:hover {
+    color: white;
   }
-  .mytilethree {
-    background-image: url(images/img9.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+
+  .land {
+    width: 200px;
+    margin: 10px;
+  }
+  
+  .land img {
+    width: 100%;
+  }
+  
+  .land h2 {
+    text-align: center;
+  }
+  
+  .land p {
+    text-align: center;
+  }
+
+  .fullchat {
+    background-color: rgba(255, 255, 255, 0.697);
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    width: 700px;
+    margin: 0 auto;
+  }
+  #sendermessage {
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.76);
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+  }
+  #receivermessage {
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.822);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+  }
+  .chattitle {
+    color: black;
+    font-weight: bold;
+  }
+
+  #chat-form input {
+    font-size: 13px;
+    font-family: 'Poppins';
+    border-radius: 5px;
+    width: 400px;
+    height: 60px;
+  }
+
+  #chat-form button {
+    font-size: 13px;
+    font-family: 'Poppins';
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+  }
+
+  #chat-form button:hover {
+    background-color: white;
+    color: black;
   }
 
   
