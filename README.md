@@ -43,21 +43,21 @@ https://www.mysql.com/downloads/
 Clone the project repository from GitHub:
 https://github.com/KolwaBrad/etitles.git
 
-
-```bash
+ ```bash
 $ git clone <repository-url>
 $ cd <project-directory>
 
 ## Install PHP Dependencies
 
 Install the required PHP dependencies using Composer:
-```bash
+
 $composer install
 
 ## Configure Environment Variables
 
 Create a copy of the `.env.example` file and name it `.env`. Update the necessary environment variables such as database credentials, app key, etc.:
-```bash
+
+
 $ cp .env.example .env
 $ nano .env
 
@@ -65,7 +65,7 @@ $ nano .env
 ## Generate Application Key
 
 Generate a unique application key using the following command:
-```bash
+
 $ php artisan key:generate
 
 ## Set Up the Database
@@ -75,13 +75,13 @@ Create a new MySQL database for your application and update the `.env` file with
 ## Migrate the Database
 
 Run the database migrations to create the required tables:
-```bash
+
 $ php artisan migrate
 
 ## Serve the Application
 
 Start the development server to run your Laravel application:
-```bash
+
 $ php artisan serve
 
 ## Access the Application
