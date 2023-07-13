@@ -43,6 +43,11 @@ https://www.mysql.com/downloads/
 Clone the project repository from GitHub:
 https://github.com/KolwaBrad/etitles.git
 
+
+```bash
+$ git clone <repository-url>
+$ cd <project-directory>
+
 ## Install PHP Dependencies
 
 Install the required PHP dependencies using Composer:
