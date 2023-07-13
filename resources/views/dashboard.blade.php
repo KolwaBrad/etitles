@@ -17,7 +17,7 @@
                         <div class="maintitle"><a href="#">eTitles</a></div>
 
                         <div class = "centernav">
-                            <div><a class = "mycenternav" href="index.php">Home</a></div>
+                            <div><a class = "mycenternav" href="dashboard">Home</a></div>
                             <div><a class = "mycenternav" href="#">Counties</a></div>
                             <div><a class = "mycenternav" href="#">Contacts</a></div>
                             <div><a class = "mycenternav" href="#">Support</a></div>
@@ -40,9 +40,9 @@
                 <br><br><br><br><br><br><br>
                 <div class = "mytiles">
                     <a href="markettitles"><div class = "mytileone">Buy Land</div></a>
-                    <a href="#"><div class = "mytileone">Sell Land</div></a>
-                    <a href="#"><div class = "mytileone">My Titles</div></a>
-                    <a href="getmessages"><div class = "mytileone">My Chats</div></a>
+                    <a href="mytitles"><div class = "mytileone">My Titles</div></a>
+                    <a href="mytransactions"><div class = "mytileone">My Requests</div></a>
+                    <a href="getmessages"><div class = "mytileone">Contacts</div></a>
                 </div>
             </main>
             <footer>

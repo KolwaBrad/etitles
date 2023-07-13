@@ -29,11 +29,11 @@
                                  <span class = "mylastnav">{{ session('lastName') }}</span></div>
                             </div>    
                     </div>
-                    <br><br><br>
+                    <br>
                 <div class="searchbar">
                     <input type="text" placeholder="Search..." />
                 </div>
-                <br><br> 
+                <br> 
 
             </header>
             <main>

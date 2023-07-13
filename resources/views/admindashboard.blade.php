@@ -29,7 +29,8 @@
           <a href="#dashboard">Dashboard</a>
           <a href="#statistics">Statistics</a>
           <a href="#transact">Transact</a>
-          <a href="#messages">Messeges</a>
+         <!-- <a href="#messages">Messeges</a> -->
+          <a href="#blockside">Blockside</a>
           <a href="adminlogout">Log out</a>
         </div>
 
@@ -71,9 +72,10 @@
     <a href="#rejectedtransfers"><div class="tile" onclick="animateTile(this)">Rejected Transfers</div></a>
     <br>
     <a href="#deniedapprovals"><div class="tile" onclick="animateTile(this)">Denied Approvals</div></a>
-    <div class="tile" onclick="animateTile(this)">Tile 6</div>
-    <div class="tile" onclick="animateTile(this)">Tile 7</div>
-    <div class="tile" onclick="animateTile(this)">Tile 8</div>
+    <a href="#statistics"><div class="tile" onclick="animateTile(this)">Statistics</div></a>
+    <!-- <a href="#messages"><div class="tile" onclick="animateTile(this)">Messages</div></a> -->
+    <a href="#blockside"><div class="tile" onclick="animateTile(this)">Blockside</div></a>
+    <a href="addland"><div class="tile" onclick="animateTile(this)">Add Title</div></a>
     <br>
     <br>
 
@@ -95,7 +97,30 @@
 
   <section id="statistics">
     <h2>Statistics</h2>
-    <p>This is a list of our services.</p>
+    <p>This is a list of statistics.</p>
+    <div class="transaction_numbers">
+  <p>Transactions Statistics</p>
+    <div class="chart">
+  <div class="bar" id="bar1" style="height: {{ session('pendingapprovalcount') }}0%"></div>
+  <div class="bar" id="bar2" style="height: {{ session('pendingtransferscount') }}0%"></div>
+  <div class="bar" id="bar3" style="height: {{ session('rejectedtransfercount') }}0%"></div>
+  <div class="bar" id="bar4" style="height: {{ session('completedtransfercount') }}0%"></div>
+  <div class="bar" id="bar5" style="height: {{ session('rejectedapprovalcount') }}0%"></div>
+  <div class="bar" id="bar6" style="height: {{ session('approvedtransfercount') }}0%"></div>
+  </div>
+
+</div class="chartindex">
+    <div class="bar1">Pending Approvals - {{ session('pendingapprovalcount') }}</div>
+    <div class="bar2">Pending Transfers - {{ session('pendingtransferscount') }}</div>
+    <div class="bar3">Rejected Transfers - {{ session('rejectedtransfercount') }}</div>
+    <div class="bar4">Completed Transfers - {{ session('completedtransfercount') }}</div>
+    <div class="bar5">Rejected Approvals - {{ session('rejectedapprovalcount') }}</div>
+    <div class="bar6">Approved Transfers - {{ session('approvedtransfercount') }}</div>
+<div>
+  </div>
+
+  
+
   </section>
 
   <section id="transact">
@@ -115,7 +140,7 @@
                 </thead>
                 <tbody> 
                         @foreach (session('alladmintransactions') as $transaction)
-                            @if($transaction->owner_approve == "1" && $transaction->bidder_approve == "1" && $transaction->admin_id === null)
+                            @if($transaction->owner_approve == "1" && $transaction->bidder_approve == "1" && $transaction->bidder_approve == 0)
                             <tr>
                                 <td>{{ $transaction->location_name }}</td>
                                 <td>{{ $transaction->bidder_fname }} {{ $transaction->bidder_lname }}</td>
@@ -247,7 +272,14 @@
 
   <section id="messages">
     <h2>Messages</h2>
-    <p>This is our contact information.</p>
+    <p>This is our complaint section.</p>
+  </section>
+
+  <section id="blockside">
+    <h2>Blockside</h2>
+    <p>This is our blockside.</p>
+
+    <h1><a href="getblocks">View All blocks</a></h1>
   </section>
 </div>
         </div>

@@ -37,14 +37,15 @@
                 <div class="searchbar">
                     <input type="text" placeholder="Search..." />
                 </div>
-                <br><br><br><br><br><br><br>
+                <br><br><br><br>
                 <div class = "myreports">
-                    <a href="incomingrequests"><div class = "mytileone">Incoming Requests</div></a>
-                    <a href="outgoingrequests"><div class = "mytileone">Outgoing Requests</div></a>
-                    <a href="appincomingrequests"><div class = "mytileone">Approved Incoming Requests</div></a>
-                    <a href="appoutgoingrequests"><div class = "mytileone">Approved Outgoing Requests</div></a>
-                    <a href="rejincomingrequests"><div class = "mytileone">Rejected Incoming Requests</div></a>
-                    <a href="rejoutgoingrequests"><div class = "mytileone">Rejected Outgoing Requests</div></a>
+                    <a href="incomingrequests"><div class = "mytileone" id="myreq">Incoming Requests</div></a>
+                    <a href="outgoingrequests"><div class = "mytileone" id="myreq">Outgoing Requests</div></a>
+                    <a href="appincomingrequests"><div class = "mytileone" id="myreq">Approved Incoming Requests</div></a>
+                    <a href="appoutgoingrequests"><div class = "mytileone" id="myreq">Approved Outgoing Requests</div></a>
+                    <a href="finalisepurchase"><div class = "mytileone" id="myreq">Finalise Purchase</div></a>
+                    <a href="rejincomingrequests"><div class = "mytileone" id="myreq">Rejected Incoming Requests</div></a>
+                    <a href="rejoutgoingrequests"><div class = "mytileone" id="myreq">Rejected Outgoing Requests</div></a>
                 </div>
             </main>
             <footer>

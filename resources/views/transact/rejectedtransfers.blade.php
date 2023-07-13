@@ -6,7 +6,7 @@
         <head>
             <title>eTitles</title>
            <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'> 
-          <!-- <link rel="stylesheet" href="{{ asset('css/market.css') }}">-->
+          <link rel="stylesheet" href="{{ asset('css/market.css') }}">
         </head>
         <body>
 
@@ -29,37 +29,39 @@
                                  <span class = "mylastnav">{{ session('lastName') }}</span></div>
                             </div>    
                     </div>
-                    <br><br><br>
+                    <br><br>
                 <div class="searchbar">
                     <input type="text" placeholder="Search..." />
                 </div>
-                <br><br> 
+                
 
             </header>
             <main>
- 
-             <h1>Rejected Incoming Requests</h1>   
+            <br><br> 
+            <div class="reqtable">
+             <h1>Rejected Transfers</h1>   
             <table>
                 <thead>
                     <tr>
                         <th>Land</th>
-                        <th>Bidder Name</th>
-                        <th>Date</th>
+                        <th>Owner Name</th>
+                        <th>Rejected Date</th>
 
                     </tr>
                 </thead>
                 <tbody> 
                         @foreach (session('alltransactions') as $transaction)
-                            @if($transaction->owner_approve == "2" && $transaction->owner_id == session('anyUserId'))
+                            @if($transaction->transfer == "2" && $transaction->bidder_id == session('anyUserId'))
                             <tr>
                                 <td>{{ $transaction->location_name }}</td>
-                                <td>{{ $transaction->bidder_fname }} {{ $transaction->bidder_lname }}</td>
+                                <td>{{ $transaction->owner_fname }} {{ $transaction->owner_lname }}</td>
                                 <td>{{ $transaction->updated_at }}</td>
                             </tr>
                             @endif
                         @endforeach    
                         </tbody>
                 </table>
+</div>
 </main>
 </body>
 </html>

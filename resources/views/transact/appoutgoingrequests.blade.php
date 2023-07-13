@@ -6,7 +6,7 @@
         <head>
             <title>eTitles</title>
            <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'> 
-          <!-- <link rel="stylesheet" href="{{ asset('css/market.css') }}">-->
+          <link rel="stylesheet" href="{{ asset('css/market.css') }}">
         </head>
         <body>
 
@@ -29,71 +29,71 @@
                                  <span class = "mylastnav">{{ session('lastName') }}</span></div>
                             </div>    
                     </div>
-                    <br><br><br>
+                    <br><br>
                 <div class="searchbar">
                     <input type="text" placeholder="Search..." />
                 </div>
-                <br><br> 
+                
 
             </header>
             <main>
- 
-             <h1>Pending Bank Statements</h1>   
+            <br><br> 
+            <div class="reqtable">
+             <h1>Approved Outgoing Requests</h1>   
             <table>
                 <thead>
                     <tr>
                         <th>Land</th>
-                        <th>Ownerr Name</th>
-                        <th>Bidder Name</th>
+                        <th>Seller Name</th>
                         <th>Date</th>
-                        <th>Add Payment Documents</th>
+                        <th>Action</th>
 
                     </tr>
                 </thead>
                 <tbody> 
                         @foreach (session('alltransactions') as $transaction)
-                            @if($transaction->admin_approve == "1" && $transaction->bidder_id == session('anyUserId'))
+                            @if($transaction->owner_approve == "1" && $transaction->bidder_id == session('anyUserId') && $transaction->bidder_approve == "0")
                             <tr>
                                 <td>{{ $transaction->location_name }}</td>
                                 <td>{{ $transaction->owner_fname }} {{ $transaction->owner_lname }}</td>
-                                <td>{{ $transaction->bidder_fname }} {{ $transaction->bidder_lname }}</td>
                                 <td>{{ $transaction->updated_at }}</td>
                                 <td>
-                                <form action="{{ route('addpayments') }}" method="POST">
+                                <form action="{{ route('completerequest') }}" method="POST">
                             @csrf
                             <!-- Pass the necessary data as hidden input fields -->
                             <input type="hidden" name="title_id" value="{{ $transaction->title_id }}">
                             <input type="hidden" name="owner_id" value="{{ $transaction->owner_id }}">
                             <input type="hidden" name="created_at" value="{{ $transaction->created_at }}">
                             <select id="bidder_approve" name="bidder_approve" onchange="togglePriceValuationInput()">
-                                <option value="3">Reject</option>
+                                <option value="2">Reject</option>
                                 <option value="1">Accept</option>
                                 
                             </select>
                             <div id="price_valuation_input" style="display: none;">
-                            <label for="bank_statement">Payment Documents</label>
-                            <input type="file" class="form-control" id="bank_statement" name="bank_statement" required>
+                            <label for="cost">Price Valuation</label>
+                            <input type="text" class="form-control" id="cost" name="cost" >
                             </div>
                             <button type="submit">Confirm</button>
-                        </form>
-                        <script>
-                            function togglePriceValuationInput() {
-                            var bidderApprove = document.getElementById('bidder_approve');
-                            var priceValuationInput = document.getElementById('price_valuation_input');
-                            if (bidderApprove.value == '1') {
-                            priceValuationInput.style.display = 'block';
-                            } else {
-                            priceValuationInput.style.display = 'none';
-                            }
-                            }
-                        </script>
+                            </form>
 
+<script>
+    function togglePriceValuationInput() {
+        var bidderApprove = document.getElementById('bidder_approve');
+        var priceValuationInput = document.getElementById('price_valuation_input');
+        if (bidderApprove.value == '1') {
+            priceValuationInput.style.display = 'block';
+        } else {
+            priceValuationInput.style.display = 'none';
+        }
+    }
+</script>
                                 </td>
                             </tr>
                             @endif
                         @endforeach    
                         </tbody>
                 </table>
+</div>
 </main>
 </body>
 </html>

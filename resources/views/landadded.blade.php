@@ -20,7 +20,7 @@
             <h1>Title added</h1>
             <br><br>
 
-            <p>Procced to view Titles<a href="viewlands">Continue</a></p>
+            <p>Procced to view Titles<a href="proccedadmin">Continue</a></p>
           
         </div>
     </body>

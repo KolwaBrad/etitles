@@ -6,7 +6,7 @@
         <head>
             <title>eTitles</title>
            <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'> 
-          <!-- <link rel="stylesheet" href="{{ asset('css/market.css') }}">-->
+          <link rel="stylesheet" href="{{ asset('css/market.css') }}">
         </head>
         <body>
 
@@ -29,15 +29,16 @@
                                  <span class = "mylastnav">{{ session('lastName') }}</span></div>
                             </div>    
                     </div>
-                    <br><br><br>
+                    <br>
                 <div class="searchbar">
                     <input type="text" placeholder="Search..." />
                 </div>
-                <br><br> 
+                
 
             </header>
             <main>
- 
+            <br><br> 
+            <div class="reqtable">
              <h1>Outgoing Requests</h1>   
             <table>
                 <thead>
@@ -60,6 +61,7 @@
                         @endforeach    
                         </tbody>
                 </table>
+</div>
 </main>
 </body>
 </html>

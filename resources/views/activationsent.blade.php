@@ -20,7 +20,7 @@
             <h1>Activation Code sent</h1>
             <br><br>
 
-            <p>Procced to activate your account<a href="adminactivateaccount">Continue</a></p>
+            <p>Procced to activate your account<a href="activateaccount">Continue</a></p>
           
         </div>
     </body>

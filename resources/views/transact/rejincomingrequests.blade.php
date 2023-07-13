@@ -6,7 +6,7 @@
         <head>
             <title>eTitles</title>
            <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'> 
-          <!-- <link rel="stylesheet" href="{{ asset('css/market.css') }}">-->
+          <link rel="stylesheet" href="{{ asset('css/market.css') }}">
         </head>
         <body>
 
@@ -29,16 +29,17 @@
                                  <span class = "mylastnav">{{ session('lastName') }}</span></div>
                             </div>    
                     </div>
-                    <br><br><br>
+                    <br><br>
                 <div class="searchbar">
                     <input type="text" placeholder="Search..." />
                 </div>
-                <br><br> 
+                
 
             </header>
             <main>
- 
-             <h1>Approved Incoming Requests</h1>   
+            <br><br> 
+            <div class="reqtable">
+             <h1>Rejected Incoming Requests</h1>   
             <table>
                 <thead>
                     <tr>
@@ -50,7 +51,7 @@
                 </thead>
                 <tbody> 
                         @foreach (session('alltransactions') as $transaction)
-                            @if($transaction->owner_approve == "1" && $transaction->owner_id == session('anyUserId'))
+                            @if($transaction->owner_approve == "2" && $transaction->owner_id == session('anyUserId'))
                             <tr>
                                 <td>{{ $transaction->location_name }}</td>
                                 <td>{{ $transaction->bidder_fname }} {{ $transaction->bidder_lname }}</td>
@@ -60,6 +61,7 @@
                         @endforeach    
                         </tbody>
                 </table>
+</div>
 </main>
 </body>
 </html>

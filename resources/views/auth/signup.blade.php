@@ -3,9 +3,9 @@
     <head>
         <title>Sign Up</title>
         <link rel="stylesheet" href="{{ asset('css/signup.css') }}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     </head>
 
     <body>
@@ -45,6 +45,21 @@
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password" required>
                     <span class="text-danger">@error('password') {{$message}} @enderror</span>
+                    <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()" />
+                        <label for="showPassword">Show Password</label>
+
+<script>
+function togglePasswordVisibility() {
+  var passwordInput = document.getElementById("password");
+  var showPasswordCheckbox = document.getElementById("showPassword");
+ 
+  if (showPasswordCheckbox.checked) {
+    passwordInput.type = "text";
+  } else {
+    passwordInput.type = "password";
+  }
+}
+</script>
                 </div>
 
                 <div class="form-group">
