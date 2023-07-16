@@ -1,10 +1,10 @@
 body {
     font-family: 'Poppins';
     text-align: center;
-    background-color: #000000;
+    background-image: url(images/img3.jpg);
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
+    background-attachment: scroll;
+    background-size: cover;
     
   }
   
@@ -14,10 +14,7 @@ body {
 
     header {
      position: sticky;
-     top: 0;
-     background-color: #000;  
-     border-bottom-left-radius: 30px;
-     border-bottom-right-radius: 30px;
+     top: 0;     
 }
   
   .endparagraph {
@@ -126,13 +123,14 @@ body {
  
 
   .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 300px;
-    height: 400px;
+    background-color: white;
     margin: auto;
     text-align: center;
     font-family: 'Poppins';
     border-radius: 10px;
+    width: 200px;
+    height: 320px;
+    border-radius: 14px;
   }
   
   .price {
@@ -154,11 +152,13 @@ body {
     color: rgb(0, 0, 0);
     font-size: 14px;
   }
-  
+  .card {
+    margin: 10px;
+  }
   .card button {
     border: none;
     outline: 0;
-    padding: 1px;
+    padding: 0px;
     color: white;
     background-color: #000;
     text-align: center;
@@ -174,14 +174,23 @@ body {
   .county_lands {
     display: flex;
     justify-content: center;
+
+    
+  }
+
+  .county_lands img {
+border-top-left-radius: 14px;
+border-top-right-radius: 14px;
   }
 
   .county_lands h1 {
     font-size: 16px;
   }
   .all_county_lands {
-    background-color: #ffffffe1;
+    background-color: #ffffff1a;
     border-radius: 30px;
+    overflow: auto;
+    max-height: 700px;
   }
 
   .card p {
@@ -202,3 +211,19 @@ body {
     background-color: #ffffffe1;
     color: #000000;
   }
+  .reqtable {
+    background-color: white;
+    border-radius: 15px;
+    justify-self: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 540px;
+    text-align: center;
+   }
+
+   .reqtable table {
+    text-align: center;
+    justify-self: center;
+    justify-content: center;
+    margin: 0 auto;
+   }

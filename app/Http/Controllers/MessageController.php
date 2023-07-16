@@ -51,9 +51,20 @@ public function getmessages()
     session(['allmessages' => $messages]);
     session(['allusers' => $users]);
 
+    $mergedCollection = $messages->map(function ($message) use ($users) {
+        if ($message->receiver_id == session('anyUserId')) {
+            $user = $users->firstWhere('id', $message->sender_id);
+        } else {
+            $user = $users->firstWhere('id', $message->receiver_id);
+        }
+        $message->user = $user;
+        return $message;
+    });
+    session(['mergedData' => $mergedCollection]);
+
     //$mymessagedata = $messages;
     //$result = $this->chatarea($allmessages);
-    $result = $this->allchats();
+    $result = $this->chatarea();
     return $result;
 }
 

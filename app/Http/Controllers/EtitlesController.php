@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Title;
 use App\Models\Subcounty;
 use App\Models\Admin;
+use App\Models\County;
 use App\Models\Transaction;
 use Hash;
 use Session;
@@ -98,6 +99,44 @@ class EtitlesController extends Controller
         } else {
             return back()->with('fail','Wrong password or email');
         }
+    }
+
+    public function enlistland(Request $request){
+
+        $title = Title::where('title_id','=',$request->title_id)->first();  
+
+        if($title){
+            $title->market = 1;
+            $title->save();
+        }
+        return view("market.landlisted");
+    }
+
+    public function withdrawland(Request $request){
+
+        $title = Title::where('title_id','=',$request->title_id)->first();  
+
+        if($title){
+            $title->market = 0;
+            $title->save();
+        }
+        return view("market.landwithdrawn");
+    }
+
+    public function mytitles()
+    {
+        $titles = Title::where('owner_id', session('anyUserId'))->get();
+        $subcounties = SubCounty::all();
+
+        $mergedCollection = $titles->map(function ($title) use ($subcounties) {
+            $subcounty = $subcounties->firstWhere('id', $title->owner_id);
+            $title->subcounty = $subcounty;
+            return $title;
+        });
+
+        session(['mergedTitles' => $mergedCollection]);
+
+        return view("market.mytitles");
     }
     public function dashboard(){
         $data = array();
@@ -269,8 +308,11 @@ public function admindashboard(){
     if(Session::has('adminloginId')){
         $admindata = Admin::where('id','=',Session::get('adminloginId'))->first();
     }
-    return view('admindashboard', compact('admindata'));
+    return view('admindashboard');
+
 }
+
+
 public function adminsignup(){
     return view("adminsignup");
 }
@@ -361,7 +403,51 @@ public function actionadminlogin(Request $request)
     public function admintransacts(){
         $transactions = Transaction::all();
         session(['alladmintransactions' => $transactions]);
-        return view('admindashboard');
+
+        $kenyacounties = County::all();
+
+        session(['counties' => $kenyacounties]);
+
+        $pendingapprovalcount = Transaction::where('owner_approve', 1)
+        ->where('bidder_approve', 1)
+        ->where('admin_approve', 0)
+        ->count();
+        session(['pendingapprovalcount' => $pendingapprovalcount]);
+
+        $pendingtransferscount = Transaction::where('admin_approve', 1)
+        ->where('transfer', 0)
+        ->count();
+        session(['pendingtransferscount' => $pendingtransferscount]);
+
+        $rejectedtransfercount = Transaction::where('transfer', 2)
+        ->count();
+        session(['rejectedtransfercount' => $rejectedtransfercount]);
+
+        $completedtransfercount = Transaction::where('transfer', 1)
+        ->count();
+        session(['completedtransfercount' => $completedtransfercount]);
+
+        $rejectedapprovalcount = Transaction::where('admin_approve', 2)
+        ->count();
+        session(['rejectedapprovalcount' => $rejectedapprovalcount]);
+
+        $approvedtransfercount = Transaction::where('admin_approve', 1)
+        ->count();
+        session(['approvedtransfercount' => $approvedtransfercount]);
+
+        $transactionscount = Transaction::count();
+
+        $counts = [];
+
+        for ($i = 1; $i <= 47; $i++) {
+            $countyCode = str_pad($i, 3, '0', STR_PAD_LEFT);
+            $counts[$countyCode] = Title::where('countycode', $countyCode)->count();
+        }
+        session(['county_counts' => $counts]);
+
+
+
+        return redirect("admindashboard");
     }
 /*
     public function myadmintransactions() {
@@ -527,6 +613,9 @@ public function actionadminlogin(Request $request)
         if ($transaction) {
   
             $transaction->admin_approve = $adminApprove;
+            $transaction->admin_id = $adminId;
+            $transaction->admin_fname = $adminFname;
+            $transaction->admin_lname = $adminLname;
             $transaction->save();
   
         } else {
@@ -535,4 +624,17 @@ public function actionadminlogin(Request $request)
         $result = $this->admintransacts();
         return $result;
     }
+/*
+    public function adminstatistics(){
+        $counts = [];
+
+    for ($i = 1; $i <= 47; $i++) {
+    $countyCode = str_pad($i, 3, '0', STR_PAD_LEFT);
+    $count = Title::where('countycode', $countyCode)->count();
+    $counts[$countyCode] = $count;
+        }
+    session(['counts' => $counts]);
+    }
+    */
+    
 }

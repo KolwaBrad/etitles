@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 </head>
 <body>
+    <a href="proccedadmin"><button>Back to Dashboard</button></a>
     <table>
         <thead>
             <tr>

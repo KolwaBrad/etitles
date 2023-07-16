@@ -43,7 +43,7 @@ Route::get('/activationsent',[EtitlesController::class,'activationsent']);
 
 Route::get('/landadded',[Blockchain::class,'landadded']);
 
-Route::get('/addland',[Blockchain::class,'addland']);
+Route::get('/addland',[Blockchain::class,'addland'])->middleware('adminisLoggedIn');
 Route::get('/viewlands',[Blockchain::class,'viewlands']);
 Route::get('/alllands',[Blockchain::class,'alllands']);
 Route::post('/addTitle',[Blockchain::class,'addTitle'])->name('addTitle');
@@ -81,11 +81,11 @@ Route::post('/storemessage',[MessageController::class,'storemessage'])->name('st
 Route::get('/getmessages',[MessageController::class,'getmessages']);
 
 //Route::get('/chatarea',[MessageController::class,'chatarea']);
-Route::get('/allchats',[MessageController::class,'allchats']);
+Route::get('/allchats',[MessageController::class,'allchats'])->middleware('isLoggedIn');
 Route::get('/replychatarea',[MessageController::class,'replychatarea']);
 Route::get('/chatarea', [MessageController::class, 'chatarea']);
 
-Route::get('/markettitles', [MarketPlace::class, 'markettitles']);
+Route::get('/markettitles', [MarketPlace::class, 'markettitles'])->middleware('isLoggedIn');
 Route::get('/allmarketplace', [MarketPlace::class, 'allmarketplace']);
 
 Route::post('/requestpurchase', [TransactionController::class, 'requestpurchase'])->name('requestpurchase');
@@ -107,4 +107,11 @@ Route::get('/proccedadmin',[EtitlesController::class,'proccedadmin']);
 
 Route::post('/transferapproverequest', [Blockchain::class, 'transferapproverequest'])->name('transferapproverequest');
 
-Route::post('/adminapproverequest', [TransactionController::class, 'adminapproverequest'])->name('adminapproverequest');
+Route::post('/adminapproverequest', [EtitlesController::class, 'adminapproverequest'])->name('adminapproverequest');
+
+Route::get('/mytitles',[EtitlesController::class,'mytitles'])->middleware('isLoggedIn');
+
+Route::post('/withdrawland', [EtitlesController::class, 'withdrawland'])->name('withdrawland');
+Route::post('/enlistland', [EtitlesController::class, 'enlistland'])->name('enlistland');
+
+Route::get('/getblocks',[Blockchain::class,'getblocks']);

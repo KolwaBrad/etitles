@@ -115,7 +115,7 @@ $tableName = "blocks";
 $blocks = CBlock::where('title_id', $newtitle_id)
     ->orderBy('indexb', 'asc')
     ->get();
-function deleteAllRowsN() {
+function deleteAllRowsN($newtitle_id) {
 //DB::table('blocks')->delete();
 $blocks = CBlock::where('title_id', $newtitle_id)->get();
 $blocks->each->delete();
@@ -124,7 +124,7 @@ echo "Data deleted successfully.";
 }
 // Check if the blockchain is valid
 if ($blockchain->isChainValid()) {
-    deleteAllRowsN();
+    deleteAllRowsN($newtitle_id);
     echo "Blockchain is valid.\n";
 } else {
     echo "Blockchain is not valid.\n";
@@ -148,7 +148,7 @@ $newIndex = $maxIndex + 1;
 $newBlock = new Block($newIndex, $newowner_id, $newtitle_id, $blockchain->getLatestBlock()->getHash());
 
 
-function deleteAllRows() {
+function deleteAllRows($newtitle_id) {
    // $blocks = DB::table('blocks')->orderBy('indexb', 'asc')->get();
    $blocks = CBlock::where('title_id', $newtitle_id)
    ->orderBy('indexb', 'asc')
@@ -158,10 +158,10 @@ if ($blocks->count() > 0) {
    // DB::table('blocks')->delete();
    $blocks = CBlock::where('title_id', $newtitle_id)->get();
    $blocks->each->delete();
-    echo "Data deleted successfully.";
+    echo "Data ";
     
 } else {
-    echo "No data found to delete.";
+    echo "No data found.";
 }
 }
 
@@ -203,16 +203,23 @@ if ($blockchain->isChainValid()) {
 }
 
     }
-    public function index()
+    public function getblocks()
 {
     // Retrieve the blocks from the blockchain
     //$blocks = DB::table('blocks')->orderBy('indexb', 'asc')->get();
-    $blocks = CBlock::orderBy('title_id', 'asc')
+    // $blocks = CBlock::orderBy('title_id', 'asc')
+    //->orderBy('indexb', 'asc')
+    //->get();
+
+    $blocks = CBlock::orderBy('created_at', 'desc')
+    ->orderBy('title_id', 'asc')
     ->orderBy('indexb', 'asc')
     ->get();
 
+    session(['allblocks' => $blocks]);
+
     // Pass the blocks data to the view
-    return view('blockchainindex', ['blocks' => $blocks]);
+    return view('blockstuff.allblocks');
 }
 
 public function blockchainindex(){

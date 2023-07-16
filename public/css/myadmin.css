@@ -1,10 +1,14 @@
 body {
+
   font-family: 'Poppins';
-  /*background-image: url(images/bac4.jpg);
+  background-image: url(images/img1.jpg);
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-size: cover;
-  */
+  
+}
+.everythinginadmin {
+  background-color: rgba(0, 0, 0, 0.347)
 }
 /* The sidebar menu */
 .sidebar {
@@ -14,7 +18,7 @@ body {
     z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
-    background-color: #111; /* Black*/
+    background-color: #ffffff; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
@@ -25,14 +29,14 @@ body {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 16px;
-    color: #818181;
+    color: #000000;
     display: block;
     transition: 0.3s;
   }
   
   /* When you mouse over the navigation links, change their color */
   .sidebar a:hover {
-    color: #f1f1f1;
+    color: #00892e;
   }
   
   /* Position and style the close button (top right corner) */

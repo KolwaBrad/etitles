@@ -1,0 +1,63 @@
+body {
+    font-family: 'Poppins';
+    text-align: center;
+    background-color: white;
+}
+
+.mytiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mytiles div {
+    height: 150px;
+    width: 600px;
+    margin: 10px;
+    background-color: rgba(255, 0, 0, 0.7);
+    border-radius: 30px;
+  }
+
+  .mytiles div:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .mytileone {
+    
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 12px;
+    margin: 10px;
+  }
+
+  .mytileone:hover {
+    color: white;
+  }
+
+
+.myblocktable {
+    justify-self: center;
+    justify-self: center;
+    font-size: 14px;
+    
+}
+
+table {
+    background-color: black;
+    border-radius: 9px;
+    text-align: center;
+    justify-self: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 8px;
+}
+
+th {
+    font-size: 14px;
+    color: white;
+}
+
+td {
+    font-size: 14px;
+    color: white;
+}

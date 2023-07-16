@@ -34,7 +34,7 @@
             </header>
             <br><br><br>
 <main>
-<div><a href="chatarea">The chats</a></div>
+<div class="chatarea"><a href="chatarea">The Contact notices</a></div>
 
 </main>
     </body>

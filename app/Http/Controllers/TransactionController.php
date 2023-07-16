@@ -136,7 +136,7 @@ class TransactionController extends Controller
         return $result;
     }
 
-    public function addpayments(){
+    public function addpayments(Request $request){
         $titleId = $request->input('title_id');
         $ownerId = $request->input('owner_id');
         $bidderId = session('anyUserId');
@@ -150,6 +150,8 @@ class TransactionController extends Controller
         ->first();
 
         if ($transaction) {
+
+
             if($bidderApprove == 1)
             {
                 if ($request->hasFile('bank_statement')) {
@@ -157,10 +159,14 @@ class TransactionController extends Controller
                     $bank_statementName = time() . '.' . $bank_statement->getClientOriginalExtension();
                     $bank_statement->storeAs('transaction_bank_statements', $bank_statementName);
                     $transaction->bank_statement = 'transaction_bank_statements/' . $bank_statementName;
+
                 }
+                $transaction->save();
+                $myresult = $this->mytransactions();
+                return $myresult; 
             
                 
-                $transaction->save();   
+                  
                
             } else {
             $transaction->bidder_approve = $bidderApprove;
@@ -172,7 +178,10 @@ class TransactionController extends Controller
         } else {
             return back()->with('fail','An error Occurred');   
         }
+       
+     
     } 
+
 
 
 

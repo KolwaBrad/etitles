@@ -1,7 +1,7 @@
 body {
     font-family: 'Poppins';
     text-align: center;
-    background-image: url(images/bac4.jpg);
+    background-image: url(images/img1.jpg);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
@@ -19,7 +19,7 @@ body {
   .topnav {
     display: flex;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     
   
   }
@@ -34,6 +34,11 @@ body {
 
   .maintitle {
     margin-left: 0;
+    color: white;
+  }
+  .maintitle a {
+    text-decoration: none;
+    color: white;
   }
 
   .centernav {
@@ -41,11 +46,12 @@ body {
   }
 
   .mycenternav:hover {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+  
   }
 
   .mycenternav {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
   }
 
   .mylastnav:hover {
@@ -53,7 +59,7 @@ body {
   }
 
   .mylastnav {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
   }
 
   .centernav div {
@@ -82,16 +88,27 @@ body {
   }
 
   .centernav div:hover {
-    background-color: #000000;
+    color: #000000;
+    background-color: white;
   }
   
   .lastnav div:hover {
-    background-color: #000000;   
+    background-color: #ffffff;  
+    color: black; 
   }
 
   div a:hover {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
   }
+  .lastnav a:hover {
+color: black;
+  }
+  .lastnav span:hover {
+    color: black;
+      }
+      .lastnav span:hover {
+        color: black;
+          }
 
   a {
     text-decoration: none;
@@ -107,12 +124,13 @@ body {
   .searchbar input {
     border: none;
     font-size: 17px;
-    color: #c7c7c7;
+    color: #000000;
     width: 300px;
     height: 33px;
     border-radius: 20px;
-    background-color: #000000;
+    background-color: #ffffff;
     text-align: center;
+    margin: 0px;
   }
 
   .mytiles {
@@ -120,17 +138,55 @@ body {
     justify-content: center;
     align-items: center;
   }
+
+  .newcardtitle {
+    width: 250px;
+    border-radius: 25px;
+    transition: 0.5s;
+  }
+
+  .newcardtitle:hover {
+    transform: scale(1.2);
+    background-color: rgb(0, 255, 119);
+    margin: 30px;
+  }
+
+  .newcardtitle  p{
+color: rgb(0, 0, 0);
+  }
+
+  .newcardtitle img {
+    margin-top: 20px;
+    width: 120px;
+    height: 120px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+  .newcardtitle button {
+    font-size: 16px;
+    background-color: rgb(0, 0, 0);
+    border: 0px;
+    border-radius: 15px;
+    color: white;
+    padding: 5px;
+  }
+
+  .newcardtitle button:hover {
+    background-color: rgb(0, 255, 119);
+    color: black;   
+  }
+
+
   .mytiles div {
     height: 250px;
     width: 250px;
     margin: 12px;
-    background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.918);
     border-radius: 30px;
+
   }
 
-  .mytiles div:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
+
 
   .mytileone {
     display: flex;
@@ -138,11 +194,14 @@ body {
     align-items: center;
     color: black;
     font-size: 50px;
+
   }
+
 
   .mytileone:hover {
     color: white;
   }
+
 
   .land {
     width: 200px;
@@ -162,16 +221,19 @@ body {
   }
 
   .fullchat {
-    background-color: rgba(255, 255, 255, 0.697);
+    background-color: rgba(255, 255, 255, 0.638);
     color: rgb(0, 0, 0);
     border-radius: 20px;
-    width: 700px;
-    margin: 0 auto;
+    width: 600px;
+   margin: 0 auto;
+   overflow: auto;
+   max-height: 600px;
+
   }
   #sendermessage {
     text-align: right;
-    background-color: rgba(0, 0, 0, 0.76);
-    color: white;
+    background-color: rgb(0, 255, 140);
+    color: rgb(0, 0, 0);
     font-size: 14px;
     border-radius: 5px;
     margin-right: 20px;
@@ -180,17 +242,24 @@ body {
   }
   #receivermessage {
     text-align: left;
-    background-color: rgba(255, 255, 255, 0.822);
+    background-color: rgba(0, 29, 13, 0.805);
     color: rgb(0, 0, 0);
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 14px;
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 5px;
   }
+  #receivermessage p {
+    color: rgb(255, 255, 255);
+  }
+  #receivermessage span {
+    color: rgb(255, 255, 255);
+  }
   .chattitle {
     color: black;
     font-weight: bold;
+    font-size: 25px;
   }
 
   #chat-form input {
@@ -213,5 +282,120 @@ body {
     background-color: white;
     color: black;
   }
+ td img {
+  width: 100px;
+ }
 
+ .mytitlestable {
+  background-color:rgba(255, 255, 255, 0.763);
+  border-radius: 24px;
+  justify-content: center;
+  text-align: center;
+  width: 744px;
+  margin: 10px;
+ }
+ .majordiv {
+  justify-self: center;
+  justify-content: center;
+  display: flex;
+ }
+
+ .mytextbox {
+  background-color: rgba(255, 255, 255, 0.793);
+  border-radius: 15px;
+  height: 50px;
+  width: 500px;
+  justify-self: center;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+ }
+
+ .mytextbox input {
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.793);
+  border-radius: 15px;
+ }
+
+ .mytextbox button {
+  width: 60px;
+  background-color: rgba(0, 0, 0, 0.793);
+  border-radius: 8px;
+  color: white;
+ }
+
+ .myreports {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #00000042;
+  border-radius: 30px;
   
+
+ }
+
+ .myreports div {
+  background-color: rgba(255, 255, 255, 0.804);
+  margin: 15px;
+ }
+
+ .oldnewcardtitle {
+  width: 200px;
+  height: 250px;
+  border-radius: 25px;
+  transition: 0.5s;
+}
+.oldnewcardtitle:hover {
+  transform: scale(1.2);
+  background-color: rgb(0, 255, 119);
+
+}
+
+.oldnewcardtitle  p{
+color: rgb(0, 0, 0);
+font-size: 13px;
+}
+
+.oldnewcardtitle img {
+
+  width: 100%;
+max-width: 200px;
+border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.oldnewcardtitle button {
+  font-size: 16px;
+  background-color: rgb(0, 0, 0);
+  border: 0px;
+  border-radius: 15px;
+  color: white;
+  padding: 5px;
+}
+
+.oldnewcardtitle button:hover {
+  background-color: rgb(0, 255, 119);
+  color: black;   
+}
+
+ #myreq {
+  font-size: 19px;
+ }
+
+ #myreq:hover {
+  color: #474545;
+ }
+ .mytitlestable table {
+  text-align: center;
+  justify-self: center;
+  justify-content: center;
+  margin: 0 auto;
+ }
+
+ .chatarea {
+  background-color: white;
+ }
+

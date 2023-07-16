@@ -49,9 +49,9 @@
                             <div class="card">
                                 <img src="{{ asset('storage/app/' . $title->photograph) }}" alt="{{ $title->photograph }}" style="width:100%">
                                 <h1>{{ $title->location_name }}</h1>
-                                <p class="price">Ksh.{{ $title->price }}</p>
-                                <p>{{ $title->approximate_area }}</p>
-                                <p>
+                                <div class="price">Ksh.{{ $title->price }}</div>
+                                <div>{{ $title->approximate_area }}</div>
+                                <div>
                                                             <!-- Add a form around the "Buy" button -->
                         <form action="{{ route('storemessage') }}" method="POST">
                             @csrf
@@ -59,8 +59,8 @@
                             <input type="hidden" name="receiver_id" value="{{ $title->owner_id }}">
                             <input type="text" id="text_message" name="text_message" placeholder="Type your message...">
                             <button type="submit">Chat with Owner</button>
-                        </form></p>
-                                <p>
+                        </form></div>
+                                <div>
                         <!-- Add a form around the "Buy" button -->
                         <form action="{{ route('requestpurchase') }}" method="POST">
                             @csrf
@@ -70,7 +70,7 @@
                             <input type="hidden" name="owner_id" value="{{ $title->owner_id }}">
                             <button type="submit">Request Purchase</button>
                         </form>
-                    </p>
+</div>
                             </div>
                             @endif
                         @endforeach    

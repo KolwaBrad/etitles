@@ -35,38 +35,32 @@
 
             </header>
             <br><br><br>
-<main>
-<div class="fullchat">
+<main  class="fullchat">
+<br><br>
+<div>
     
     <p class="chattitle">Notifications</p>
     
     
-    
+    <br>
 
                 <div id="chat-container">
                     @foreach (session('mergedData') as $message)
                         @if ($message['sender_id'] != session('anyUserId') && $message['receiver_id'] == session('anyUserId'))
-                            
-
-
-                                                         
-                        
                                 <div class="message" id="receivermessage">
-                                    <p class="chatname">{{ $message->user->firstName }} {{ $message->user->lastName }}</p>
-                                        <span class="message-text">&nbsp&nbsp{{ $message->created_at->format('H:i') }}&nbsp :</span>
+                                    <p class="chatname">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ $message->user->firstName }} {{ $message->user->lastName }}</p>
+                                        <span class="message-text">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ $message->created_at->format('H:i') }}&nbsp :</span>
                                         <span class="message-text">&nbsp{{ $message->text_message }}</span>
                                     </div>
-                               
-                     
                             </div>
-                            </div>
+                           
                             @endif
                     @endforeach
    
 
     
 </div>
-
+<br>
 
 </main>
     </body>

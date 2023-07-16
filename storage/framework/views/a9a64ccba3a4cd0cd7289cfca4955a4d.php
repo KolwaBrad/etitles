@@ -17,7 +17,7 @@
                         <div class="maintitle"><a href="#">eTitles</a></div>
 
                         <div class = "centernav">
-                            <div><a class = "mycenternav" href="index.php">Home</a></div>
+                            <div><a class = "mycenternav" href="dashboard">Home</a></div>
                             <div><a class = "mycenternav" href="#">Counties</a></div>
                             <div><a class = "mycenternav" href="#">Contacts</a></div>
                             <div><a class = "mycenternav" href="#">Support</a></div>
@@ -39,11 +39,41 @@
                 </div>
                 <br><br><br><br><br><br><br>
                 <div class = "mytiles">
-                    <a href="markettitles"><div class = "mytileone">Buy Land</div></a>
-                    <a href="#"><div class = "mytileone">Sell Land</div></a>
-                    <a href="#"><div class = "mytileone">My Titles</div></a>
-                    <a href="getmessages"><div class = "mytileone">My Chats</div></a>
+
+
+
+
+                    <div class="newcardtitle">
+                        <img src="<?php echo e(asset('css/images/handshake_3829916.png')); ?>">
+                        <p>View and acquire titles on sale<p>
+                        <a href="markettitles"><button>Market</button></a>
+                    </div>
+
+                    <div class="newcardtitle">
+                        <img src="<?php echo e(asset('css/images/contract_826021.png')); ?>">
+                        <p>View owned titles<p>
+                        <a href="mytitles"><button>My Titles</button></a>
+                    </div>
+
+                    <div class="newcardtitle">
+                        <img src="<?php echo e(asset('css/images/tip_10237215.png')); ?>">
+                        <p>View and respond to requests<p>
+                        <a href="mytransactions"><button>Requests</button></a>
+                    </div>
+
+                    <div class="newcardtitle">
+                        <img src="<?php echo e(asset('css/images/email_10474681.png')); ?>">
+                        <p>View Notifications<p>
+                        <a href="getmessages"><button>Notifications</button></a>
+                    </div>
+                    
+                  <!--  
+                    <a href="markettitles"><div class = "mytileone" id="buyland">Buy</div></a>
+                    <a href="mytitles"><div class = "mytileone" id="mytitles">My Titles</div></a>
+                    <a href="mytransactions"><div class = "mytileone" id="myrequests">Requests</div></a>
+                    <a href="getmessages"><div class = "mytileone"  id="mynotifications">Notifications</div></a>
                 </div>
+            -->
             </main>
             <footer>
                 <p class="endparagraph">Copyright &copy; 2023 eTitles</p>

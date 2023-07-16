@@ -14,6 +14,8 @@
     </head>
 
     <body>
+
+    <div class="everythinginadmin">
         <div class="topbar">
           <div class="adminname">
           <span class ="mylastnav">{{ session('anyUserfname') }}</span>
@@ -26,6 +28,7 @@
 
         <div id="mySidebar" class="sidebar">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <br> <br> <br>
           <a href="#dashboard">Dashboard</a>
           <a href="#statistics">Statistics</a>
           <a href="#transact">Transact</a>
@@ -41,7 +44,9 @@
           <div id="newmain">
   <section id="dashboard">
     <br>
-    <br>
+    <span><a href="proccedadmin"><button class="myrefreshbutton">Refresh</button></a></span>
+    <span><h2 class="adminmaintitle">Admin Dashboard</h2></span>
+    
     <div class="dashboard">
 
         <div class="tile" id="mytileone" onclick="animateTile(this)">  
@@ -125,9 +130,9 @@
 
   <section id="transact">
     <h2>Transact</h2>
-    <div>
+    <div class="mytransacttable">
     <h1 id="pendingapprovals">Pending approvals</h1>   
-            <table>
+            <table class="smalltable">
                 <thead>
                     <tr>
                         <th>Land</th>
@@ -140,7 +145,7 @@
                 </thead>
                 <tbody> 
                         @foreach (session('alladmintransactions') as $transaction)
-                            @if($transaction->owner_approve == "1" && $transaction->bidder_approve == "1" && $transaction->bidder_approve == 0)
+                            @if($transaction->owner_approve == "1" && $transaction->bidder_approve == "1" && $transaction->admin_approve == 0)
                             <tr>
                                 <td>{{ $transaction->location_name }}</td>
                                 <td>{{ $transaction->bidder_fname }} {{ $transaction->bidder_lname }}</td>
@@ -168,9 +173,9 @@
                 </table>
   </div>
 
-      <div>
+      <div class="mytransacttable">
     <h1 id="pendingtransfers">Pending Transfers</h1>   
-            <table>
+            <table class="smalltable">
                 <thead>
                     <tr>
                         <th>Land</th>
@@ -211,9 +216,9 @@
                 </table>
   </div>
 
-  <div>
+  <div class="mytransacttable">
     <h1 id="rejectedtransfers">Rejected Transfers</h1>   
-            <table>
+            <table class="smalltable">
                 <thead>
                     <tr>
                         <th>Land</th>
@@ -240,9 +245,9 @@
                 </table>
   </div>
 
-  <div>
+  <div class="mytransacttable">
     <h1 id="deniedapprovals">Denied Approvals</h1>   
-            <table>
+            <table class="smalltable">
                 <thead>
                     <tr>
                         <th>Land</th>
@@ -280,6 +285,7 @@
     <p>This is our blockside.</p>
 
     <h1><a href="getblocks">View All blocks</a></h1>
+    <h1><a href="viewlands">View All Titles</a></h1>
   </section>
 </div>
         </div>

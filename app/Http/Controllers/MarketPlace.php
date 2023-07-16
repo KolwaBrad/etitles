@@ -14,7 +14,10 @@ class MarketPlace extends Controller
 {
     //
     public function markettitles() {
-        $titles = Title::where('market', 1)->get();
+        $anyUserId = session('anyUserId');
+        $titles = Title::where('market', 1)
+    ->whereNotIn('owner_id', [$anyUserId])
+    ->get();
         return view('market.allmarketplace', compact('titles'));
     }
 
